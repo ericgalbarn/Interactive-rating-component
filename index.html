@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <title>Challenge done by Eric Galbarn | Interactive rating component</title>
+</head>
+<body>
+<main data-js-wrapper>
+  <article class="rating-start">
+    <picture class="rating-start__icon">
+      <img class="icon_star" src="./images/icon-star.svg" alt="Star icon">
+    </picture>
+      <div class="rating-start__content">
+        <h1 class="rating-start__question">How did we do?</h1>
+        <p class="rating-start__feedback">
+          Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!
+        </p>
+        <!-- JS: Having same name( example:"rating" ) enables 1 selection only -->
+        <form class="rating-start__score" data-js-form>
+          <div class="rating-start_selection">
+          <label class="radio-input">
+              <input type="radio" name="rating" class="sr-only" value="1" />
+              <span class="control">1<span class="sr-only">star</span></span></label>
+          <label class="radio-input">
+              <input type="radio" name="rating" class="sr-only" value="2" />
+              <span class="control">2<span class="sr-only">stars</span></span></label>
+          <label class="radio-input">
+              <input type="radio" name="rating" class="sr-only" value="3" />
+              <span class="control">3<span class="sr-only">stars</span></span></label>
+          <label class="radio-input">
+              <input type="radio" name="rating" class="sr-only" value="4" />
+              <span class="control">4<span class="sr-only">stars</span></span></label>
+          <label class="radio-input">
+              <input type="radio" name="rating" class="sr-only" value="5" />
+              <span class="control">5<span class="sr-only">stars</span></span></label>
+        </div>
+          <button type="submit" class="button">Submit</button>
+      </form>
+    </article>
+    
+      <!-- Rating state end -->
+    
+      <!-- Thank you state start -->
+    <template class="rating-end" data-js-template>
+      <picture class="rating-end__icon">
+        <img src="./images/illustration-thank-you.svg" alt="Thank You">
+      </picture>
+      <p class="rating-end__result"> You selected { { rating } } out of 5</p>
+      <h1 class="rating-end__thank">Thank you!</h1>
+      
+      <p class="rating-end__last-note">
+          We appreciate you taking the time to give a rating. If you ever need more support,
+          don’t hesitate to get in touch!
+      </p>
+        <!-- Thank you state end -->
+      </template>
+    </main>
+<script src="./script.js"></script>
+</body>
+</html>

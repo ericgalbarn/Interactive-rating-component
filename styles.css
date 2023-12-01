@@ -1,0 +1,272 @@
+:root{
+  --clr-orange: hsl(25, 97%, 53%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grey: hsl(217, 12%, 63%);
+  --clr-medium-grey: hsl(216, 12%, 54%);
+  --clr-dark-blue: hsl(213, 19%, 18%);
+  --clr-very-dark-blue: hsl(216, 12%, 8%);
+  --clr-gradient-dark: linear-gradient(to bottom, hsl(215, 20%, 17%), hsl(215,24%,12%));
+  
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fs-content: 15px;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+html:focus-within{
+  scroll-behavior: smooth;
+}
+/* General styling */
+body{
+    font-family: 'Overpass', sans-serif;
+    font-weight: var(--fw-regular);
+    background-color: var(--clr-very-dark-blue);
+    color: var(--clr-white);
+    font-size: var(--fs-content) ;
+    text-rendering: optimizeSpeed;
+    min-block-size: 100vh;
+    display: grid;
+    min-height: 100vh;
+    place-content: center; 
+    margin: 1.5rem;
+}
+main {
+  background-image: var(--clr-gradient-dark);
+  border-radius: 0.75rem;
+  max-width: 409px;
+}
+.rating-start{
+  background-image: var(--clr-gradient-dark);
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
+.rating-start__icon{
+  margin-bottom: 1rem;
+}
+.rating-start_selection{
+  display: flex;
+  justify-content: space-between;
+}
+.icon_star{
+height: 48px;
+width: 48px;
+padding: 16px;
+background-color: var(--clr-dark-blue);
+border-radius: 48px;
+}
+.rating-start__question{
+  margin-bottom: 0.75rem;
+}
+.rating-start__feedback{
+  margin-bottom: 1.75rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+.button{
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  border-radius: 45px;
+  margin-top: 1.75rem;
+  padding:10px 0px;
+  border: unset;
+  width: 100%
+  appearance: none;
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  text-transform: Uppercase;
+  transition: 0.15s all ease-in-out;
+}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.radio-input .control{
+    --size: 3.1875rem;
+    display: block;
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-medium-grey);
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    text-align: center;
+    line-height: var(--size);
+    cursor: pointer;
+}
+.radio-input:hover .control{
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  transition:0.15s all ease-in-out;
+}
+.radio-input input:checked + .control{
+  background-color: var(--clr-medium-grey);
+  color: var(--clr-white);
+}
+.button:is(:hover, :focus-visible){
+  background-color: var(--clr-white);
+  color: var(--clr-orange);
+  cursor: pointer;
+  outline: none;
+}
+.rating-end__icon{
+  display: grid;
+  place-content: center;
+  margin: 1.5rem 0rem;
+}
+.rating-end__result{
+  --size: 2rem;
+  
+  display: grid;
+  place-items: center;
+  color: var(--clr-orange);
+  margin-inline: auto;
+  height: var(--size);
+  width: max-content;
+  background-color: var(--clr-dark-blue);
+  border-radius: var(--size);
+  padding: 0.45rem 0.75rem;
+}
+
+.rating-end__thank{
+  display: grid;
+  place-content: center;
+  margin: 1rem 0rem;
+}
+.rating-end__last-note{
+  display: flex;
+  text-align: center;
+  color: var(--clr-light-grey);
+  margin: 0px 1rem;
+  margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 50px){
+  .rating-start{
+    background-image: var(--clr-gradient-dark);
+    padding: 2rem;
+    border-radius: 0.75rem;
+  }
+  .rating-start__icon{
+    margin-bottom: 1rem;
+  }
+  .rating-start_selection{
+    display: flex;
+    justify-content: space-between;
+  }
+  .icon_star{
+  height: 48px;
+  width: 48px;
+  padding: 16px;
+  background-color: var(--clr-dark-blue);
+  border-radius: 48px;
+  }
+  .rating-start__question{
+    margin-bottom: 0.75rem;
+  }
+  .rating-start__feedback{
+    margin-bottom: 1.75rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  .button{
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+    border-radius: 45px;
+    margin-top: 1.75rem;
+    padding:10px 0px;
+    border: unset;
+    width: 100%
+    appearance: none;
+    font-weight: var(--fw-bold);
+    letter-spacing: 2px;
+    text-transform: Uppercase;
+    transition: 0.15s all ease-in-out;
+  }
+  .sr-only{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+  }
+  .radio-input .control{
+      --size: 3.1875rem;
+      display: block;
+      background-color: var(--clr-dark-blue);
+      color: var(--clr-medium-grey);
+      height: var(--size);
+      width: var(--size);
+      border-radius: var(--size);
+      text-align: center;
+      line-height: var(--size);
+      cursor: pointer;
+  }
+  .radio-input:hover .control{
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+    transition:0.15s all ease-in-out;
+  }
+  .radio-input input:checked + .control{
+    background-color: var(--clr-medium-grey);
+    color: var(--clr-white);
+  }
+  .button:is(:hover, :focus-visible){
+    background-color: var(--clr-white);
+    color: var(--clr-orange);
+    cursor: pointer;
+    outline: none;
+  }
+}
