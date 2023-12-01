@@ -72,7 +72,7 @@ body{
 }
 main {
   background-image: var(--clr-gradient-dark);
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
   max-width: 409px;
 }
 .rating-start{
