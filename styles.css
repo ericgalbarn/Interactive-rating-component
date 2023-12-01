@@ -78,7 +78,7 @@ main {
 .rating-start{
   background-image: var(--clr-gradient-dark);
   padding: 2rem;
-  border-radius: 0.75rem;
+  border-radius: 1.5rem;
 }
 .rating-start__icon{
   margin-bottom: 1rem;
